@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HW6 Form</title>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <h2>Database Operations</h2>
+
+    <label>Choose an operation: </label>
+    <select autocomplete="off" id="databaseOperation">
+        <option value="" disabled selected></option>
+        <option value="create">Create a new table</option>
+        <option value="drop">Drop a table</option>
+        <option value="add">Add a record to an existing table</option>
+        <option value="delete">Delete a record from an existing table</option>
+        <option value="update">Update a record in an existing table</option>
+        <option value="display">Display all records in a table</option>
+    </select>
+
+    <!-- PHP Form -->
+    <form action="server_interaction.php" method="post" id="phpForm">
+
+    </form>
+
+    <!-- Templates -->
+     <!-- Create Table Template -->
+      <template id="create">
+        <input type="text" name="table_name" placeholder="Table Name">
+        <input type="text" name="num_columns" placeholder="Number of Columns"><br>
+         <button type="submit">Submit</button>
+
+        <!-- Tell the php what template this request is from -->
+        <input type="hidden" name="form_type" value="create">
+     </template>
+
+     <!-- Drop Table Template -->
+     <template id="drop">
+         <input type="text" name="table_name" placeholder="Table Name"><br>
+         <button type="submit">Submit</button>
+
+        <!-- Tell the php what template this request is from -->
+        <input type="hidden" name="form_type" value="drop">
+     </template>
+
+     <!-- Add Record Template -->
+     <template id="add">
+         <input type="text" name="table_name" placeholder="Table Name"><br>
+         <button type="submit">Submit</button>
+
+        <!-- Tell the php what template this request is from -->
+        <input type="hidden" name="form_type" value="add">
+     </template>
+
+     <!-- Delete Record Template -->
+     <template id="delete">
+         <input type="text" name="table_name" placeholder="Table Name">
+         <input type="text" name="key" placeholder="Primary Key Value"><br>
+         <button type="submit">Submit</button>
+
+        <!-- Tell the php what template this request is from -->
+        <input type="hidden" name="form_type" value="delete">
+     </template>
+
+     <!-- Update Record Template -->
+     <template id="update">
+         <input type="text" name="table_name" placeholder="Table Name">
+         <input type="text" name="key" placeholder="Primary Key Value"><br>
+         <button type="submit">Submit</button>
+
+
+        <!-- Tell the php what template this request is from -->
+        <input type="hidden" name="form_type" value="update">
+     </template>
+
+     <!-- Display Table Template -->
+     <template id="display">
+        <input type="text" name="table_name" placeholder="Table Name"><br>
+        <button type="submit">Submit</button>
+
+        <!-- Tell the php what template this request is from -->
+        <input type="hidden" name="form_type" value="display">
+     </template>
+</body>
+</html>
